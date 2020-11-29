@@ -1,0 +1,13 @@
+# The version of docker-compose to use.
+version: '3'
+
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    # Look for Dockerfile in current directory to build this container.
+    build: .
+    ports:
+      # Dash means array.
+      # Port on machine : port on container.
+      - "4001:8081"
